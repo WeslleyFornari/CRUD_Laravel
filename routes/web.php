@@ -18,15 +18,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 /* Procurar */
-Route::get('/main', [UserController::class,'main'])->name('main');
+Route::get('/', [UserController::class,'listar'])->name('home');
 Route::get('/procurar', [UserController::class,'procurar'])->name('procurar');
 
 /* INSERIR */
-Route::post('/store', [UserController::class,'store'])->name('store');
+Route::get('/cadastrar', [UserController::class,'cadastrar'])->name('cadastrar');
+Route::post('/salvar', [UserController::class,'salvar'])->name('salvar');
 
-Route::get('/inserir', [UserController::class,'inserir'])->name('inserir');
-Route::get('/editar/{id}', [UserController::class,'editar'])->name('editar');
+
+/* UPDATE */
+Route::get('/editar/{id}', [UserController::class,'editar_id'])->name('editar');
 Route::post('/update/{id}', [UserController::class,'update'])->name('update');
+
+Route::get('/deletar/{id}', [UserController::class,'deletar'])->name('deletar');
+
+
+
+
+
+
 
 
 
